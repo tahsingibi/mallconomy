@@ -1,0 +1,14 @@
+@import '../../styles/_variable.scss';
+
+.intro{
+    background-color: $mainColor;
+    height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+    padding:15px 16px;
+}
+.header{
+    margin-top: 5px;
+}

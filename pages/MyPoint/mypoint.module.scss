@@ -1,0 +1,42 @@
+@import '../../styles/variable';
+
+.PointList {
+    padding-top: 92px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+
+    ul {
+        list-style: none;
+    }
+
+    ul li {
+        padding: 16px 24px;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+        margin-bottom: 1px;
+        display: Flex;
+        justify-content: space-between;
+    }
+}
+
+.ListTitle {
+    margin: 0 16px 16px 16px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.actionName {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000
+}
+
+.point {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: $pointColor;
+}
