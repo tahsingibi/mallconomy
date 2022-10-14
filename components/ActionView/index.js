@@ -44,7 +44,7 @@ function ActionView({ earnMode }) {
             button="Close"
             onClick={() => handleComplete()}
           >
-            You've earned points for your participation! <br /> Keep Up the
+            You &apos; ve earned points for your participation! <br /> Keep Up the
             great work!
           </Dialog>
         )}
