@@ -6,11 +6,11 @@ function ListItem({ title, description, point, image, onClick  }) {
     <div className={style.ListItem} onClick={onClick}>
       <div className={style.img}>
         <Image
-        src={image}
-        width={36}
-        height={36}
-        layout="fixed"
-        alt={title}
+          src={image}
+          width={36}
+          height={36}
+          layout="fixed"
+          alt={title}
         />
       </div>
       <div className={style.text}>

@@ -4,7 +4,7 @@ import { useAll } from '../../components/Context';
 import style from './mypoint.module.scss';
 
 function MyPoint() {
-  const { mypoint } = useAll();
+  const { myPoint } = useAll();
 
   return (
     <>
@@ -16,10 +16,10 @@ function MyPoint() {
       <div className={style.PointList}>
         <h4 className={style.ListTitle}>Completed actions</h4>
         <ul>
-          {mypoint?.map(item => (
-            <li key={item.id}>
-              <span className={style.actionName}>{item.title}</span>
-              <span className={style.point}>+{item.point}</span>
+          {myPoint?.map(item => (
+            <li key={item?.id}>
+              <span className={style.actionName}>{item?.title}</span>
+              <span className={style.point}>+{item?.point}</span>
             </li>
           ))}
         </ul>

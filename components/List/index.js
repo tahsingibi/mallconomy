@@ -1,6 +1,6 @@
+import { useEffect } from 'react';
 import style from './list.module.scss';
 import { useAll } from '../Context';
-import { useEffect } from 'react';
 import ListItem from '../ListItem';
 import ActionView from '../ActionView';
 
@@ -8,16 +8,20 @@ export default function List() {
   const {
     earnMode,
     setEarnMode,
-    setActionview,
-    actionview,
+    setActionView,
+    actionView,
     actions,
     setActions,
   } = useAll();
 
   async function getData() {
-    const res = await fetch('https://tahsinbey.com/mallconomy/actions.json');
-    const data = await res.json();
-    setActions(data);
+    try {
+      const res = await fetch('https://tahsinbey.com/mallconomy/actions.json');
+      const data = await res.json();
+      setActions(data);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   useEffect(() => {
@@ -25,13 +29,15 @@ export default function List() {
   }, []);
 
   const handleClick = ({ item }) => {
-    setActionview(true);
+    setActionView(true);
     setEarnMode(item);
   };
 
   return (
     <>
-      {!actionview ? (
+      {actionView ? (
+        <ActionView earnMode={earnMode} />
+      ) : (
         <div className={style.AppList}>
           <h4 className={style.ListTitle}>Actions to be completed</h4>
           {actions?.map((item) => (
@@ -45,8 +51,6 @@ export default function List() {
             />
           ))}
         </div>
-      ) : (
-        <ActionView earnMode={earnMode} />
       )}
     </>
   );

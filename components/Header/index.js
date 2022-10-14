@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import style from './header.module.scss';
 import { useAll } from '../Context';
 import textLogo from '../../src/img/textLogo.svg';
-import style from './header.module.scss';
 
 export default function Header() {
   const { totalPoint } = useAll();

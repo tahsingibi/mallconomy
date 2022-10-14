@@ -1,15 +1,16 @@
-import style from './intro.module.scss';
-import logo from '../../src/img/logo.svg';
-import cover from '../../src/img/cover.svg';
 import Image from 'next/image';
+import style from './intro.module.scss';
 import Dialog from '../Dialog';
 import { useAll } from '../Context';
+import logo from '../../src/img/logo.svg';
+import cover from '../../src/img/cover.svg';
 
 export default function Intro() {
+
   const { setLogin } = useAll();
+
   const handleSubmit = () => {
     setLogin(true);
-    localStorage.setItem('login', true);
   };
 
   return (
@@ -23,7 +24,8 @@ export default function Intro() {
       <Dialog
         title="Welcome to the TestCase APP!"
         button="Start"
-        onClick={handleSubmit}>
+        onClick={handleSubmit}
+      >
         We created this exercise to gain insights about your development skills.
       </Dialog>
     </div>

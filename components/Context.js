@@ -5,21 +5,20 @@ const Context = createContext();
 const Provider = ({ children }) => {
   const [actions, setActions] = useState();
 
-  const initialLogin = false;
-  const [login, setLogin] = useState(initialLogin);
+  const [login, setLogin] = useState(false);
 
   const [totalPoint, setTotalPoint] = useState(0);
-  const [mypoint, setMypoint] = useState([]);
+  const [myPoint, setMyPoint] = useState([]);
 
   const [earnMode, setEarnMode] = useState();
-  const [actionview, setActionview] = useState(false);
+  const [actionView, setActionView] = useState(false);
 
   const [complete, setComplete] = useState(false);
 
   useEffect(() => {
-    var total = mypoint.reduce((accum, item) => accum + item.point, 0);
+    var total = myPoint.reduce((accum, item) => accum + item.point, 0);
     setTotalPoint(total);
-  }, [mypoint]);
+  }, [myPoint]);
 
   const data = {
     login,
@@ -30,10 +29,10 @@ const Provider = ({ children }) => {
     setTotalPoint,
     earnMode,
     setEarnMode,
-    actionview,
-    setActionview,
-    mypoint,
-    setMypoint,
+    actionView,
+    setActionView,
+    myPoint,
+    setMyPoint,
     complete,
     setComplete,
   };

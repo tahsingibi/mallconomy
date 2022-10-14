@@ -1,48 +1,51 @@
 import { useAll } from '../Context';
-import Dialog from '../Dialog';
 import style from './actionview.module.scss';
+import Dialog from '../Dialog';
 import check from '../../src/img/check.svg';
 
 export default function ActionView({ earnMode }) {
-  const { setMypoint, mypoint, complete, setComplete, setActionview } =
-    useAll();
+  const { setMyPoint, myPoint, complete, setComplete, setActionView } = useAll();
 
   const handlePoint = (earnMode) => {
-    if (mypoint.find(myp => myp.id === earnMode.id)) {
+    const findPoint = myPoint.find((myp) => myp.id === earnMode?.id);
+    if (findPoint) {
       alert('Actions can only be completed once.');
-      setActionview(false);
+
+      setActionView(false);
       setComplete(false);
     } else {
-      setMypoint([earnMode, ...mypoint]);
+      setMyPoint([earnMode, ...myPoint]);
       setComplete(true);
     }
   };
 
   const handleComplete = () => {
-    setActionview(false);
+    setActionView(false);
     setComplete(false);
   };
 
   return (
     <>
       <div className={style.ActionView}>
-        {!complete ? (
-          <Dialog
-            title={earnMode.title}
-            image={earnMode.image}
-            point={earnMode.point}
-            button="Earn points"
-            onClick={() => handlePoint(earnMode)}>
-            {earnMode.description}
-          </Dialog>
-        ) : (
+        {complete ? (
           <Dialog
             title="Congratulations!"
             image={check}
             button="Close"
-            onClick={() => handleComplete()}>
+            onClick={() => handleComplete()}
+          >
             You&apos;ve earned points for your participation!
             <br /> Keep Up the great work!
+          </Dialog>
+        ) : (
+          <Dialog
+            title={earnMode?.title}
+            image={earnMode?.image}
+            point={earnMode?.point}
+            button="Earn points"
+            onClick={() => handlePoint(earnMode)}
+          >
+            {earnMode?.description}
           </Dialog>
         )}
       </div>
