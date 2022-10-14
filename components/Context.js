@@ -21,7 +21,6 @@ const Provider = ({ children }) => {
     setTotalPoint(total);
   }, [mypoint]);
 
-
   const data = {
     login,
     setLogin,

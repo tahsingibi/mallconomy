@@ -5,11 +5,11 @@ import Image from 'next/image';
 import Dialog from '../Dialog';
 import { useAll } from '../Context';
 
-function Intro() {
-  const {login, setLogin} = useAll()
+export default function Intro() {
+  const { setLogin } = useAll();
   const handleSubmit = () => {
-    setLogin(true)
-    localStorage.setItem('login', true)
+    setLogin(true);
+    localStorage.setItem('login', true);
   };
 
   return (
@@ -23,10 +23,9 @@ function Intro() {
       <Dialog
         title="Welcome to the TestCase APP!"
         button="Start"
-        onClick={handleSubmit}
-      >We created this exercise to gain insights about your development skills.</Dialog>
+        onClick={handleSubmit}>
+        We created this exercise to gain insights about your development skills.
+      </Dialog>
     </div>
   );
 }
-
-export default Intro;

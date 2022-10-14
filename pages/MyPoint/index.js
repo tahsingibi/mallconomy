@@ -1,4 +1,5 @@
-import AppHeader from '../../components/AppHeader';
+import Head from 'next/head';
+import Header from '../../components/Header';
 import { useAll } from '../../components/Context';
 import style from './mypoint.module.scss';
 
@@ -7,17 +8,20 @@ function MyPoint() {
 
   return (
     <>
-      <AppHeader />
+      <Head>
+        <title>My Points – TestCase APP.</title>
+      </Head>
+
+      <Header />
       <div className={style.PointList}>
         <h4 className={style.ListTitle}>Completed actions</h4>
         <ul>
-          {mypoint &&
-            mypoint.map((item) => (
-              <li key={item.id}>
-                <span className={style.actionName}>{item.title}</span>
-                <span className={style.point}>+{item.point}</span>
-              </li>
-            ))}
+          {mypoint?.map(item => (
+            <li key={item.id}>
+              <span className={style.actionName}>{item.title}</span>
+              <span className={style.point}>+{item.point}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </>

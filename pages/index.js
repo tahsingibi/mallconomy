@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Intro from '../components/Intro';
 import { useAll } from '../components/Context';
-import AppHome from '../components/AppHome';
+import Main from '../components/Main';
 
 export default function Home() {
   const { login } = useAll();
@@ -14,7 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>{login ? <AppHome /> : <Intro />}</main>
+      <main>{login ? <Main /> : <Intro />}</main>
     </div>
   );
 }

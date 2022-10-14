@@ -10,6 +10,7 @@ function ListItem({ title, description, point, image, onClick  }) {
         width={36}
         height={36}
         layout="fixed"
+        alt={title}
         />
       </div>
       <div className={style.text}>

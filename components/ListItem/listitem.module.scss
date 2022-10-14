@@ -1,38 +1,42 @@
 @import '../../styles/_variable.scss';
 
-.ListItem{
+.ListItem {
     background-color: #fff;
     border-radius: 16px;
-    padding:16px;
-    display:flex;
+    padding: 16px;
+    display: flex;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-    cursor:pointer;
+    cursor: pointer;
 
-    & + & {
-        margin-top:16px;
+    &+& {
+        margin-top: 16px;
     }
 }
-.img{
-    width:36px;
-    height:36px;
-    position:relative;
+
+.img {
+    width: 36px;
+    height: 36px;
+    position: relative;
     margin-right: 8px;
 }
-.point{
-    font-family:'Montserrat', sans-serif;
+
+.point {
+    font-family: 'Montserrat', sans-serif;
     margin-left: auto;
-    color:$pointColor;
-    font-weight:700;
-    font-size:14px;
-    line-height:18px;
+    color: $pointColor;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
 }
-.textTitle{
-    font-weight:700;
-    font-size:14px;
+
+.textTitle {
+    font-weight: 700;
+    font-size: 14px;
     line-height: 20px;
 }
-.textDesc{
-    font-size:12px;
-    line-height:16px;
-    color:$grayColor;
+
+.textDesc {
+    font-size: 12px;
+    line-height: 16px;
+    color: $grayColor;
 }
